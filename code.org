@@ -1,0 +1,486 @@
+Projeto final do jogo do code .org:
+// VARIABLES
+var score = 0;
+var gameOver = false;
+var powerTime = 0;
+
+var pacmanX = 200;
+var pacmanY = 320;
+var pacmanSpeed = 3;
+
+var foodX = 200;
+var foodY = 80;
+
+// SUPER BOLAS
+var power1X = 40;
+var power1Y = 40;
+
+var power2X = 360;
+var power2Y = 40;
+
+var power3X = 40;
+var power3Y = 300;
+
+var power4X = 360;
+var power4Y = 300;
+
+// FANTASMAS
+var g1X = 120;
+var g1Y = 150;
+
+var g2X = 280;
+var g2Y = 150;
+
+var g3X = 120;
+var g3Y = 270;
+
+var g4X = 280;
+var g4Y = 270;
+
+// MAIS LENTO QUE O PLAYER
+var ghostSpeed = 1.5;
+
+function draw() {
+  background("black");
+
+  if (gameOver) {
+    fill("red");
+    textSize(40);
+    text("GAME OVER", 70, 190);
+
+    fill("white");
+    textSize(25);
+    text("Score: " + score, 135, 230);
+
+    return;
+  }
+
+  drawMaze();
+
+  movePacman();
+
+  moveGhost1();
+  moveGhost2();
+  moveGhost3();
+  moveGhost4();
+
+  eatFood();
+  eatPowerBalls();
+  checkGhosts();
+
+  drawFood();
+  drawPowerBalls();
+
+  drawPacman();
+  drawAllGhosts();
+
+  drawScore();
+
+  if (powerTime > 0) {
+    powerTime = powerTime - 1;
+  }
+}
+
+// PACMAN
+function movePacman() {
+
+  var newX = pacmanX;
+  var newY = pacmanY;
+
+  if (keyDown("left")) {
+    newX = pacmanX - pacmanSpeed;
+  }
+
+  if (keyDown("right")) {
+    newX = pacmanX + pacmanSpeed;
+  }
+
+  if (keyDown("up")) {
+    newY = pacmanY - pacmanSpeed;
+  }
+
+  if (keyDown("down")) {
+    newY = pacmanY + pacmanSpeed;
+  }
+
+  if (!hitWall(newX, newY, 30)) {
+    pacmanX = newX;
+    pacmanY = newY;
+  }
+}
+
+// LABIRINTO
+function drawMaze() {
+
+  fill("blue");
+
+  rect(0,0,400,20);
+  rect(0,380,400,20);
+  rect(0,0,20,400);
+  rect(380,0,20,400);
+
+  rect(70,70,100,20);
+  rect(230,70,100,20);
+
+  rect(70,140,20,120);
+  rect(310,140,20,120);
+
+  rect(130,200,140,20);
+
+  rect(70,310,100,20);
+  rect(230,310,100,20);
+}
+
+// WALL COLLISION
+function hitWall(x,y,size){
+
+  if(x < 20 || x > 380 || y < 20 || y > 380){
+    return true;
+  }
+
+  if(touchRect(x,y,size,70,70,100,20)) return true;
+  if(touchRect(x,y,size,230,70,100,20)) return true;
+  if(touchRect(x,y,size,70,140,20,120)) return true;
+  if(touchRect(x,y,size,310,140,20,120)) return true;
+  if(touchRect(x,y,size,130,200,140,20)) return true;
+  if(touchRect(x,y,size,70,310,100,20)) return true;
+  if(touchRect(x,y,size,230,310,100,20)) return true;
+
+  return false;
+}
+
+function touchRect(x,y,size,rx,ry,rw,rh){
+
+  return x + size/2 > rx &&
+         x - size/2 < rx + rw &&
+         y + size/2 > ry &&
+         y - size/2 < ry + rh;
+}
+
+// COMIDA
+function drawFood(){
+
+  fill("white");
+  ellipse(foodX,foodY,8,8);
+}
+
+function eatFood(){
+
+  if(dist(pacmanX,pacmanY,foodX,foodY) < 22){
+
+    score = score + 1;
+
+    foodX = randomNumber(40,360);
+    foodY = randomNumber(40,360);
+  }
+}
+
+// SUPER BOLAS
+function drawPowerBalls(){
+
+  fill("lime");
+  ellipse(power1X,power1Y,25,25);
+
+  fill("cyan");
+  ellipse(power2X,power2Y,25,25);
+
+  fill("orange");
+  ellipse(power3X,power3Y,25,25);
+
+  fill("purple");
+  ellipse(power4X,power4Y,25,25);
+}
+
+function eatPowerBalls(){
+
+  if(dist(pacmanX,pacmanY,power1X,power1Y) < 25){
+    powerTime = 300;
+    score = score + 5;
+    power1X = -100;
+  }
+
+  if(dist(pacmanX,pacmanY,power2X,power2Y) < 25){
+    powerTime = 300;
+    score = score + 5;
+    power2X = -100;
+  }
+
+  if(dist(pacmanX,pacmanY,power3X,power3Y) < 25){
+    powerTime = 300;
+    score = score + 5;
+    power3X = -100;
+  }
+
+  if(dist(pacmanX,pacmanY,power4X,power4Y) < 25){
+    powerTime = 300;
+    score = score + 5;
+    power4X = -100;
+  }
+}
+
+// DESENHAR PACMAN
+function drawPacman(){
+
+  fill("yellow");
+  ellipse(pacmanX,pacmanY,35,35);
+
+  fill("black");
+
+  triangle(
+    pacmanX,
+    pacmanY,
+    pacmanX + 25,
+    pacmanY - 12,
+    pacmanX + 25,
+    pacmanY + 12
+  );
+}
+
+// MOVIMENTO DOS FANTASMAS
+function moveGhost1(){
+  moveGhostChase(1);
+}
+
+function moveGhost2(){
+  moveGhostChase(2);
+}
+
+function moveGhost3(){
+  moveGhostChase(3);
+}
+
+function moveGhost4(){
+  moveGhostChase(4);
+}
+
+// IA DOS FANTASMAS
+function moveGhostChase(number){
+
+  var gx;
+  var gy;
+
+  if(number == 1){
+    gx = g1X;
+    gy = g1Y;
+  }
+
+  if(number == 2){
+    gx = g2X;
+    gy = g2Y;
+  }
+
+  if(number == 3){
+    gx = g3X;
+    gy = g3Y;
+  }
+
+  if(number == 4){
+    gx = g4X;
+    gy = g4Y;
+  }
+
+  var newX = gx;
+  var newY = gy;
+
+  if(abs(pacmanX - gx) > abs(pacmanY - gy)){
+
+    if(pacmanX > gx){
+      newX = gx + ghostSpeed;
+    } else {
+      newX = gx - ghostSpeed;
+    }
+
+  } else {
+
+    if(pacmanY > gy){
+      newY = gy + ghostSpeed;
+    } else {
+      newY = gy - ghostSpeed;
+    }
+  }
+
+  if(!hitWall(newX,newY,25)){
+
+    gx = newX;
+    gy = newY;
+
+  } else {
+
+    var moved = false;
+
+    newX = gx + ghostSpeed;
+
+    if(!hitWall(newX,gy,25)){
+      gx = newX;
+      moved = true;
+    }
+
+    if(!moved){
+
+      newX = gx - ghostSpeed;
+
+      if(!hitWall(newX,gy,25)){
+        gx = newX;
+        moved = true;
+      }
+    }
+
+    if(!moved){
+
+      newY = gy + ghostSpeed;
+
+      if(!hitWall(gx,newY,25)){
+        gy = newY;
+        moved = true;
+      }
+    }
+
+    if(!moved){
+
+      newY = gy - ghostSpeed;
+
+      if(!hitWall(gx,newY,25)){
+        gy = newY;
+      }
+    }
+  }
+
+  if(number == 1){
+    g1X = gx;
+    g1Y = gy;
+  }
+
+  if(number == 2){
+    g2X = gx;
+    g2Y = gy;
+  }
+
+  if(number == 3){
+    g3X = gx;
+    g3Y = gy;
+  }
+
+  if(number == 4){
+    g4X = gx;
+    g4Y = gy;
+  }
+}
+
+// DESENHAR FANTASMAS
+function drawAllGhosts(){
+
+  drawGhost(g1X,g1Y,"red");
+  drawGhost(g2X,g2Y,"pink");
+  drawGhost(g3X,g3Y,"orange");
+  drawGhost(g4X,g4Y,"purple");
+}
+
+function drawGhost(x,y,color){
+
+  if(powerTime > 0){
+    fill("lightblue");
+  } else {
+    fill(color);
+  }
+
+  ellipse(x,y,35,35);
+
+  rect(x - 17,y,34,25);
+
+  triangle(x - 17,y + 25,x - 8,y + 15,x,y + 25);
+  triangle(x,y + 25,x + 8,y + 15,x + 17,y + 25);
+
+  fill("white");
+
+  ellipse(x - 8,y - 5,8,8);
+  ellipse(x + 8,y - 5,8,8);
+
+  fill("blue");
+
+  ellipse(x - 8,y - 5,4,4);
+  ellipse(x + 8,y - 5,4,4);
+}
+
+// COLISÃO FANTASMAS
+function checkGhosts(){
+
+  checkOneGhost(1);
+  checkOneGhost(2);
+  checkOneGhost(3);
+  checkOneGhost(4);
+}
+
+function checkOneGhost(number){
+
+  var gx;
+  var gy;
+
+  if(number == 1){
+    gx = g1X;
+    gy = g1Y;
+  }
+
+  if(number == 2){
+    gx = g2X;
+    gy = g2Y;
+  }
+
+  if(number == 3){
+    gx = g3X;
+    gy = g3Y;
+  }
+
+  if(number == 4){
+    gx = g4X;
+    gy = g4Y;
+  }
+
+  if(dist(pacmanX,pacmanY,gx,gy) < 28){
+
+    if(powerTime > 0){
+
+      score = score + 10;
+
+      if(number == 1){
+        g1X = randomNumber(40,360);
+        g1Y = randomNumber(40,360);
+      }
+
+      if(number == 2){
+        g2X = randomNumber(40,360);
+        g2Y = randomNumber(40,360);
+      }
+
+      if(number == 3){
+        g3X = randomNumber(40,360);
+        g3Y = randomNumber(40,360);
+      }
+
+      if(number == 4){
+        g4X = randomNumber(40,360);
+        g4Y = randomNumber(40,360);
+      }
+
+    } else {
+
+      gameOver = true;
+    }
+  }
+}
+
+// SCORE
+function drawScore(){
+
+  fill("white");
+
+  textSize(20);
+
+  text("Score: " + score,10,25);
+
+  if(powerTime > 0){
+
+    fill("gold");
+
+    text("POWER!",290,25);
+  }
+}
