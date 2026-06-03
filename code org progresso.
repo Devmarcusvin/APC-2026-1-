@@ -1,1 +1,112 @@
+Semana 1 - Lição 1: Drawing in Game Lab
 
+
+Nesta primeira lição tivemos contato inicial com o ambiente Game Lab do Code.org. O objetivo foi nos familiarizar com a plataforma que será utilizada ao longo da disci
+plina, conhecendo sua interface, ferramentas e recursos básicos. Também aprendemos os primeiros conceitos relacionados à criação de desenhos e animações simples utiliz
+ando programação, compreendendo como o ambiente responde aos comandos inseridos pelo usuário.
+
+
+Semana 2 - Lição 2: Shapes and Parameters
+
+Nesta lição aprendemos a utilizar comandos para criar formas geométricas dentro do Game Lab. Trabalhamos com retângulos, círculos, linhas e outras figuras básicas que podem ser desenhadas através da programação.
+Também estudamos o conceito de parâmetros, entendendo que eles permitem modificar características específicas dos objetos criados. Alteramos posições, tamanhos e outras propriedades para observar como cada parâmetro influencia o resultado final.
+Esse conteúdo foi importante para desenvolver uma melhor compreensão sobre como os programas recebem informações e executam diferentes ações a partir delas.
+
+Semana 3 - Lição 3: Variables
+
+Nesta atividade fomos apresentados ao conceito de variáveis, um dos fundamentos da programação. Aprendemos que variáveis funcionam como espaços de armazenamento capazes de guardar informações para serem utilizadas posteriormente.
+Realizamos exercícios envolvendo criação, alteração e utilização de variáveis dentro do código. Também observamos como elas podem tornar os programas mais flexíveis e organizados.
+O estudo das variáveis permitiu compreender melhor como controlar dados dentro de uma aplicação e como reutilizar informações sem a necessidade de repetir valores manualmente.
+
+
+Semana 4 - Lição 4: Random Numbers
+
+Nesta lição estudamos a utilização de números aleatórios dentro dos programas. Aprendemos como gerar valores diferentes a cada execução utilizando funções específicas da linguagem.
+Durante os exercícios observamos como a aleatoriedade pode ser aplicada para criar comportamentos dinâmicos em jogos e animações, tornando cada execução única.
+Esse conceito é amplamente utilizado no desenvolvimento de jogos, principalmente em sistemas de sorteio, posicionamento automático de objetos e geração de eventos inesperados.
+
+Semana 5 - Lição 5: Sprites
+
+Nesta atividade conhecemos os sprites, que representam personagens ou objetos utilizados em jogos digitais. Aprendemos como criar sprites e adicioná-los ao ambiente de programação.
+Também exploramos a biblioteca de animações disponível no Game Lab, escolhendo imagens e personagens para compor diferentes cenários.
+O uso de sprites permitiu dar mais vida aos projetos desenvolvidos, aproximando as atividades de conceitos utilizados no desenvolvimento real de jogos.
+
+Semana 6 - Lição 6: Sprite Properties
+
+Nesta lição aprofundamos nossos conhecimentos sobre sprites estudando suas propriedades. Aprendemos que características como posição, escala, rotação e visibilidade podem ser modificadas através do código.
+Realizamos testes alterando essas propriedades e observando os efeitos gerados na tela em tempo real.
+Esse conteúdo foi importante para entender como controlar elementos gráficos de maneira mais precisa dentro de uma aplicação.
+
+Semana 7 - Lição 7: Text
+
+Nesta atividade aprendemos a exibir textos na tela utilizando comandos específicos do Game Lab. Trabalhamos com mensagens, pontuações e informações exibidas ao usuário.
+Também exploramos opções relacionadas ao posicionamento, tamanho e estilo dos textos apresentados.
+O uso de textos é fundamental para criar interfaces mais informativas e melhorar a comunicação entre o programa e o usuário.
+
+Semana 8 - Lição 8: The Draw Loop
+
+Nesta lição estudamos o Draw Loop, estrutura responsável por atualizar continuamente os elementos de um programa.
+Aprendemos que esse mecanismo permite criar animações, movimentações e interações em tempo real, executando repetidamente os comandos presentes dentro do bloco principal.
+A compreensão do Draw Loop representou um passo importante para o desenvolvimento de jogos e aplicações interativas.
+
+Semana 9 - Lição 9: Sprite Movement
+
+Nesta atividade aprendemos diferentes formas de movimentar sprites dentro do ambiente Game Lab.
+Utilizamos alterações de coordenadas para controlar deslocamentos horizontais e verticais, criando movimentos simples para personagens e objetos.
+Esse conteúdo serviu como base para a construção de jogos mais complexos que exigem movimentação constante dos elementos da tela.
+
+Semana 10 - Lição 10: Conditionals
+
+Nesta lição aprendemos a utilizar estruturas condicionais para permitir tomadas de decisão dentro dos programas.
+Estudamos comandos como if e else, criando situações em que diferentes ações são executadas dependendo de determinadas condições.
+As estruturas condicionais são fundamentais para tornar os programas mais inteligentes e capazes de reagir a diferentes cenários.
+
+Semana 11 - Lição 11: Keyboard Input
+
+Nesta atividade aprendemos a capturar comandos realizados pelo usuário através do teclado.
+Criamos programas capazes de identificar teclas pressionadas e utilizá-las para controlar movimentos e ações dos personagens.
+Esse recurso é essencial para desenvolver jogos interativos em que o usuário possui controle direto sobre os elementos da aplicação.
+
+Semana 12 - Lição 12: Mouse Input
+
+Nesta lição estudamos as interações realizadas através do mouse.
+Aprendemos a detectar cliques, movimentações e posicionamentos do cursor dentro da tela do programa.
+Esse conhecimento ampliou as possibilidades de interação entre usuário e sistema, permitindo a criação de interfaces mais dinâmicas.
+
+
+Semana 13 - Lição 13: Velocity
+
+Nesta atividade aprendemos a utilizar velocidade para controlar o movimento automático dos sprites.
+Exploramos as propriedades velocityX e velocityY, responsáveis por definir a velocidade horizontal e vertical dos objetos.
+Esse conceito simplifica a implementação de animações contínuas e movimentos automáticos dentro dos jogos.
+
+Semana 14 - Lição 14: Collision Detection
+
+Nesta lição estudamos técnicas de detecção de colisão entre objetos.
+Aprendemos a identificar quando dois sprites entram em contato e como utilizar essa informação para gerar eventos dentro da aplicação.
+A detecção de colisão é um dos elementos mais importantes no desenvolvimento de jogos digitais.
+
+Semana 15 - Lição 15: Complex Sprite Movement
+
+Nesta atividade combinamos diferentes conceitos estudados anteriormente para criar movimentações mais complexas.
+Utilizamos velocidade, teclado, condicionais e propriedades dos sprites para produzir comportamentos mais realistas.
+Essa etapa ajudou a consolidar diversos conteúdos apresentados ao longo das semanas anteriores.
+
+Semana 16 - Lição 16: Collisions
+
+Nesta lição aprofundamos os estudos relacionados às colisões entre sprites.
+Aprendemos a utilizar diferentes tipos de resposta quando ocorre contato entre objetos, incluindo bloqueios e mudanças de direção.
+Esses recursos são amplamente utilizados em jogos de plataforma, corrida e ação.
+
+Semana 17 - Lição 17: Functions
+
+Nesta atividade estudamos funções, um dos conceitos mais importantes da programação.
+Aprendemos a criar blocos reutilizáveis de código capazes de executar tarefas específicas sempre que forem chamados.
+O uso de funções contribui para a organização, manutenção e reutilização do código em projetos maiores.
+
+
+Semana 18 - Lição 18: Project - Design a Game
+
+Nesta etapa final aplicamos os conhecimentos adquiridos ao longo do curso para desenvolver um jogo completo.
+Durante o projeto utilizamos conceitos como sprites, movimentação, colisões, funções, variáveis, condicionais e interação com o usuário.
+Essa atividade permitiu consolidar o aprendizado obtido ao longo das lições anteriores, demonstrando na prática como diferentes conceitos podem ser combinados para criar uma aplicação funcional e interativa.
