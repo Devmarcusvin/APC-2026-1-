@@ -1,0 +1,9 @@
+## Descrição do simulador OctoStudio
+
+Após diversas pesquisas em guias, fóruns e materiais de apoio, foi constatado que o OctoStudio não possui suporte para entrada de dados por meio de texto digitado pelo usuário.
+
+Inicialmente, essa limitação gerou certa frustração, pois restringia algumas das soluções planejadas. No entanto, após orientação do professor Jorge e discussões em sala de aula, foi possível encontrar alternativas para a interação do usuário.
+
+Entre as formas de entrada disponíveis na plataforma, foi utilizado o evento **"When I Tap"**, que permite executar ações quando o usuário toca na tela. Esse recurso possibilitou a criação de interações simples e eficientes, adequadas às propostas desenvolvidas durante as atividades.
+
+A experiência contribuiu para a compreensão das limitações e possibilidades do OctoStudio, incentivando a busca por soluções criativas para problemas de desenvolvimento.
