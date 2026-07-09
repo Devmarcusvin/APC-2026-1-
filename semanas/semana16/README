@@ -1,0 +1,96 @@
+# EducaDF – Explorador Educacional da PDAD 2024
+
+## Sobre o Projeto
+
+O EducaDF é um sistema desenvolvido em Python utilizando Tkinter e Matplotlib para a exploração dos microdados da Pesquisa Distrital por Amostra de Domicílios (PDAD 2024).
+
+O projeto foi desenvolvido como trabalho final da disciplina de Algoritmos e Programação de Computadores (APC) da Universidade de Brasília (UnB).
+
+O sistema permite analisar o perfil educacional da população do Distrito Federal por Região Administrativa, oferecendo filtros interativos, estatísticas descritivas, visualizações gráficas e exportação de relatórios.
+
+---
+
+## Autor
+
+**Marcus Vinicius Paz Vieira**
+
+Matrícula: **232029087**
+
+Disciplina: **Algoritmos e Programação de Computadores (APC)**
+
+Universidade de Brasília (UnB)
+
+Semestre: **2026/1**
+
+---
+
+## Tema do Trabalho
+
+### Recorte A – Perfil Educacional por Região Administrativa
+
+Pergunta de pesquisa:
+
+> Como varia o nível de escolaridade da população adulta entre as Regiões Administrativas do Distrito Federal?
+
+---
+
+## Funcionalidades
+
+### Filtros
+
+- Seleção de Região Administrativa (RA);
+- Seleção de Faixa Etária.
+
+Faixas disponíveis:
+
+- 18–30 anos;
+- 31–45 anos;
+- 46–60 anos;
+- 60+ anos.
+
+---
+
+### Estatísticas
+
+O sistema apresenta:
+
+- Total de moradores analisados;
+- Idade média;
+- Escolaridade mais comum;
+- Percentual de moradores com ensino superior completo.
+
+---
+
+### Visualização Gráfica
+
+O projeto utiliza Matplotlib integrado ao Tkinter para exibir:
+
+- Distribuição da escolaridade;
+- Atualização automática do gráfico conforme os filtros selecionados.
+
+---
+
+### Exportação
+
+O usuário pode exportar as estatísticas para um relatório em formato TXT por meio da interface gráfica.
+
+---
+
+## Estrutura do Projeto
+
+```text
+trabalhofinal_apc2026
+│
+├── dados
+│   ├── moradores.csv
+│   ├── domicilios.xlsx
+│   └── dicionario_de_variaveis_pdad_2024.xlsx
+│
+├── utils
+│   ├── carregar.py
+│   ├── calcular.py
+│   └── exportar.py
+│
+├── sistema.py
+├── README.md
+└── requirements.txt
